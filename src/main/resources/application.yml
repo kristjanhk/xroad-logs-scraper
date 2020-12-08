@@ -1,0 +1,19 @@
+quarkus:
+  http:
+    host: 0.0.0.0
+    port: 8085
+  datasource:
+    jdbc:
+      url: jdbc:postgresql://localhost:9432/xroad-logs
+    db-kind: postgresql
+    username: test
+    password: test
+  hibernate-orm:
+    database:
+      generation: update
+    physical-naming-strategy: com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy
+  log:
+    level: INFO
+    console:
+      format: "%d{HH:mm:ss.SSS} %X{traceId} %p (%F:%L) %s%e%n"
+      color: true
